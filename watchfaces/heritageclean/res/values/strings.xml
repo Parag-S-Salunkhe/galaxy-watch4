@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="watch_face_name">Heritage Clean</string>
+    <string name="hr_slot_label">Heart rate</string>
+    <string name="theme_label">Accent colour</string>
+    <string name="theme_orange">Subtle orange</string>
+    <string name="theme_blue">Subtle blue</string>
+    <string name="seconds_label">Seconds hand</string>
+    <string name="heartanim_label">Pulse animation</string>
+    <string name="theme_silver">Silver</string>
+    <string name="theme_black">Metallic black</string>
+    <string name="date_slot_label">Date</string>
+</resources>

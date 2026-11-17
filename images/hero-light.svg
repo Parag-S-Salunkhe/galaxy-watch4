@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="840" height="270" viewBox="0 0 840 270" role="img" aria-label="Galaxy Watch 4 tuned with Claude Code: no root, nothing permanent, every change logged with its undo; two custom watch faces; always-on display moved to the low-power chip.">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#f3f7fa"/></linearGradient>
+<clipPath id="card"><rect x="0.5" y="0.5" width="839" height="269" rx="16"/></clipPath>
+</defs>
+<rect x="0.5" y="0.5" width="839" height="269" rx="16" fill="url(#bg)" stroke="#d0d7de"/>
+<g clip-path="url(#card)"><rect x="0" y="0" width="840" height="4" fill="#f08a3c"/></g>
+<text x="36" y="52" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="12" font-weight="700" letter-spacing="2" fill="#f08a3c">SIDE BUILD · WEAR OS · CLAUDE CODE</text>
+<text x="36" y="92" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="30" font-weight="700" fill="#1f2328">Galaxy Watch 4, tuned up</text>
+<text x="36" y="122" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="14.5" fill="#57606a">No root, nothing permanent, a yes before every change,</text>
+<text x="36" y="143" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="14.5" fill="#57606a">and every command logged with its undo.</text>
+<g opacity="0"><animate attributeName="opacity" from="0" to="1" begin="0.30s" dur="0.5s" fill="freeze"/><rect x="36" y="169" width="203" height="26" rx="13" fill="#f6f8fa" stroke="#d0d7de"/><text x="137" y="186" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="12" font-weight="600" fill="#1f2328">Assistant idle CPU 21% → 0</text></g>
+<g opacity="0"><animate attributeName="opacity" from="0" to="1" begin="0.55s" dur="0.5s" fill="freeze"/><rect x="246.6" y="169" width="188" height="26" rx="13" fill="#f6f8fa" stroke="#d0d7de"/><text x="341" y="186" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="12" font-weight="600" fill="#1f2328">Free memory 225 → 345 MB</text></g>
+<g opacity="0"><animate attributeName="opacity" from="0" to="1" begin="0.80s" dur="0.5s" fill="freeze"/><rect x="36" y="203" width="139" height="26" rx="13" fill="#f6f8fa" stroke="#d0d7de"/><text x="105" y="220" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="12" font-weight="600" fill="#1f2328">35 logged changes</text></g>
+<g opacity="0"><animate attributeName="opacity" from="0" to="1" begin="1.05s" dur="0.5s" fill="freeze"/><rect x="182.7" y="203" width="117" height="26" rx="13" fill="#f6f8fa" stroke="#d0d7de"/><text x="241" y="220" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="12" font-weight="600" fill="#1f2328">2 custom faces</text></g>
+<g opacity="0"><animate attributeName="opacity" from="0" to="1" begin="1.30s" dur="0.5s" fill="freeze"/><rect x="308.09999999999997" y="203" width="196" height="26" rx="13" fill="#f6f8fa" stroke="#d0d7de"/><text x="406" y="220" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="12" font-weight="600" fill="#1f2328">AOD on the low-power chip</text></g>
+<g clip-path="url(#card)">
+<rect x="654" y="0" width="92" height="53" rx="10" fill="#1b2026"/>
+<rect x="654" y="217" width="92" height="53" rx="10" fill="#1b2026"/>
+<circle cx="700" cy="135" r="104" fill="#2a2f36" stroke="#3b424b" stroke-width="2"/>
+<circle cx="700" cy="135" r="92" fill="#15181c"/>
+<line x1="700.0" y1="57.0" x2="700.0" y2="46.0" stroke="#f08a3c" stroke-width="3" stroke-linecap="round"/>
+<line x1="708.9" y1="50.5" x2="709.3" y2="46.5" stroke="#5f6670" stroke-width="1.2" stroke-linecap="round"/>
+<line x1="717.7" y1="51.9" x2="718.5" y2="47.9" stroke="#5f6670" stroke-width="1.2" stroke-linecap="round"/>
+<line x1="726.3" y1="54.2" x2="727.5" y2="50.4" stroke="#5f6670" stroke-width="1.2" stroke-linecap="round"/>
+<line x1="734.6" y1="57.3" x2="736.2" y2="53.7" stroke="#5f6670" stroke-width="1.2" stroke-linecap="round"/>
+<line x1="739.0" y1="67.5" x2="744.5" y2="57.9" stroke="#e8eaed" stroke-width="3" stroke-linecap="round"/>
+<line x1="750.0" y1="66.2" x2="752.3" y2="63.0" stroke="#5f6670" stroke-width="1.2" stroke-linecap="round"/>
+<line x1="756.9" y1="71.8" x2="759.6" y2="68.9" stroke="#5f6670" stroke-width="1.2" stroke-linecap="round"/>
+<line x1="763.2" y1="78.1" x2="766.1" y2="75.4" stroke="#5f6670" stroke-width="1.2" stroke-linecap="round"/>
+<line x1="768.8" y1="85.0" x2="772.0" y2="82.7" stroke="#5f6670" stroke-width="1.2" stroke-linecap="round"/>
+<line x1="767.5" y1="96.0" x2="777.1" y2="90.5" stroke="#e8eaed" stroke-width="3" stroke-linecap="round"/>
+<line x1="777.7" y1="100.4" x2="781.3" y2="98.8" stroke="#5f6670" stroke-width="1.2" stroke-linecap="round"/>
+<line x1="780.8" y1="108.7" x2="784.6" y2="107.5" stroke="#5f6670" stroke-width="1.2" stroke-linecap="round"/>
+<line x1="783.1" y1="117.3" x2="787.1" y2="116.5" stroke="#5f6670" stroke-width="1.2" stroke-linecap="round"/>
+<line x1="784.5" y1="126.1" x2="788.5" y2="125.7" stroke="#5f6670" stroke-width="1.2" stroke-linecap="round"/>
+<line x1="778.0" y1="135.0" x2="789.0" y2="135.0" stroke="#f08a3c" stroke-width="3" stroke-linecap="round"/>
+<line x1="784.5" y1="143.9" x2="788.5" y2="144.3" stroke="#5f6670" stroke-width="1.2" stroke-linecap="round"/>
+<line x1="783.1" y1="152.7" x2="787.1" y2="153.5" stroke="#5f6670" stroke-width="1.2" stroke-linecap="round"/>
+<line x1="780.8" y1="161.3" x2="784.6" y2="162.5" stroke="#5f6670" stroke-width="1.2" stroke-linecap="round"/>
+<line x1="777.7" y1="169.6" x2="781.3" y2="171.2" stroke="#5f6670" stroke-width="1.2" stroke-linecap="round"/>
+<line x1="767.5" y1="174.0" x2="777.1" y2="179.5" stroke="#e8eaed" stroke-width="3" stroke-linecap="round"/>
+<line x1="768.8" y1="185.0" x2="772.0" y2="187.3" stroke="#5f6670" stroke-width="1.2" stroke-linecap="round"/>
+<line x1="763.2" y1="191.9" x2="766.1" y2="194.6" stroke="#5f6670" stroke-width="1.2" stroke-linecap="round"/>
+<line x1="756.9" y1="198.2" x2="759.6" y2="201.1" stroke="#5f6670" stroke-width="1.2" stroke-linecap="round"/>
+<line x1="750.0" y1="203.8" x2="752.3" y2="207.0" stroke="#5f6670" stroke-width="1.2" stroke-linecap="round"/>
+<line x1="739.0" y1="202.5" x2="744.5" y2="212.1" stroke="#e8eaed" stroke-width="3" stroke-linecap="round"/>
+<line x1="734.6" y1="212.7" x2="736.2" y2="216.3" stroke="#5f6670" stroke-width="1.2" stroke-linecap="round"/>
+<line x1="726.3" y1="215.8" x2="727.5" y2="219.6" stroke="#5f6670" stroke-width="1.2" stroke-linecap="round"/>
+<line x1="717.7" y1="218.1" x2="718.5" y2="222.1" stroke="#5f6670" stroke-width="1.2" stroke-linecap="round"/>
+<line x1="708.9" y1="219.5" x2="709.3" y2="223.5" stroke="#5f6670" stroke-width="1.2" stroke-linecap="round"/>
+<line x1="700.0" y1="213.0" x2="700.0" y2="224.0" stroke="#f08a3c" stroke-width="3" stroke-linecap="round"/>
+<line x1="691.1" y1="219.5" x2="690.7" y2="223.5" stroke="#5f6670" stroke-width="1.2" stroke-linecap="round"/>
+<line x1="682.3" y1="218.1" x2="681.5" y2="222.1" stroke="#5f6670" stroke-width="1.2" stroke-linecap="round"/>
+<line x1="673.7" y1="215.8" x2="672.5" y2="219.6" stroke="#5f6670" stroke-width="1.2" stroke-linecap="round"/>
+<line x1="665.4" y1="212.7" x2="663.8" y2="216.3" stroke="#5f6670" stroke-width="1.2" stroke-linecap="round"/>
+<line x1="661.0" y1="202.5" x2="655.5" y2="212.1" stroke="#e8eaed" stroke-width="3" stroke-linecap="round"/>
+<line x1="650.0" y1="203.8" x2="647.7" y2="207.0" stroke="#5f6670" stroke-width="1.2" stroke-linecap="round"/>
+<line x1="643.1" y1="198.2" x2="640.4" y2="201.1" stroke="#5f6670" stroke-width="1.2" stroke-linecap="round"/>
+<line x1="636.8" y1="191.9" x2="633.9" y2="194.6" stroke="#5f6670" stroke-width="1.2" stroke-linecap="round"/>
+<line x1="631.2" y1="185.0" x2="628.0" y2="187.3" stroke="#5f6670" stroke-width="1.2" stroke-linecap="round"/>
+<line x1="632.5" y1="174.0" x2="622.9" y2="179.5" stroke="#e8eaed" stroke-width="3" stroke-linecap="round"/>
+<line x1="622.3" y1="169.6" x2="618.7" y2="171.2" stroke="#5f6670" stroke-width="1.2" stroke-linecap="round"/>
+<line x1="619.2" y1="161.3" x2="615.4" y2="162.5" stroke="#5f6670" stroke-width="1.2" stroke-linecap="round"/>
+<line x1="616.9" y1="152.7" x2="612.9" y2="153.5" stroke="#5f6670" stroke-width="1.2" stroke-linecap="round"/>
+<line x1="615.5" y1="143.9" x2="611.5" y2="144.3" stroke="#5f6670" stroke-width="1.2" stroke-linecap="round"/>
+<line x1="622.0" y1="135.0" x2="611.0" y2="135.0" stroke="#f08a3c" stroke-width="3" stroke-linecap="round"/>
+<line x1="615.5" y1="126.1" x2="611.5" y2="125.7" stroke="#5f6670" stroke-width="1.2" stroke-linecap="round"/>
+<line x1="616.9" y1="117.3" x2="612.9" y2="116.5" stroke="#5f6670" stroke-width="1.2" stroke-linecap="round"/>
+<line x1="619.2" y1="108.7" x2="615.4" y2="107.5" stroke="#5f6670" stroke-width="1.2" stroke-linecap="round"/>
+<line x1="622.3" y1="100.4" x2="618.7" y2="98.8" stroke="#5f6670" stroke-width="1.2" stroke-linecap="round"/>
+<line x1="632.5" y1="96.0" x2="622.9" y2="90.5" stroke="#e8eaed" stroke-width="3" stroke-linecap="round"/>
+<line x1="631.2" y1="85.0" x2="628.0" y2="82.7" stroke="#5f6670" stroke-width="1.2" stroke-linecap="round"/>
+<line x1="636.8" y1="78.1" x2="633.9" y2="75.4" stroke="#5f6670" stroke-width="1.2" stroke-linecap="round"/>
+<line x1="643.1" y1="71.8" x2="640.4" y2="68.9" stroke="#5f6670" stroke-width="1.2" stroke-linecap="round"/>
+<line x1="650.0" y1="66.2" x2="647.7" y2="63.0" stroke="#5f6670" stroke-width="1.2" stroke-linecap="round"/>
+<line x1="661.0" y1="67.5" x2="655.5" y2="57.9" stroke="#e8eaed" stroke-width="3" stroke-linecap="round"/>
+<line x1="665.4" y1="57.3" x2="663.8" y2="53.7" stroke="#5f6670" stroke-width="1.2" stroke-linecap="round"/>
+<line x1="673.7" y1="54.2" x2="672.5" y2="50.4" stroke="#5f6670" stroke-width="1.2" stroke-linecap="round"/>
+<line x1="682.3" y1="51.9" x2="681.5" y2="47.9" stroke="#5f6670" stroke-width="1.2" stroke-linecap="round"/>
+<line x1="691.1" y1="50.5" x2="690.7" y2="46.5" stroke="#5f6670" stroke-width="1.2" stroke-linecap="round"/>
+<circle cx="700" cy="175" r="22" fill="#1f242a" stroke="#2f363e"/>
+<g transform="translate(700,171)"><path d="M0 6 C-10 -2 -9 -10 -4 -10 C-1 -10 0 -7 0 -6 C0 -7 1 -10 4 -10 C9 -10 10 -2 0 6z" fill="#d6304a"><animateTransform attributeName="transform" type="scale" values="1;1.25;1;1.15;1;1" keyTimes="0;0.12;0.24;0.36;0.5;1" dur="0.85s" repeatCount="indefinite"/></path></g>
+<text x="700" y="191" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="9" font-weight="600" fill="#c9ced6">72 bpm</text>
+<rect x="670" y="79" width="60" height="20" rx="10" fill="#1f242a" stroke="#2f363e"/>
+<text x="700" y="93" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="10" font-weight="600" fill="#e8eaed">TUE 3</text>
+<g><animateTransform attributeName="transform" type="rotate" from="300 700 135" to="660 700 135" dur="120s" repeatCount="indefinite"/><line x1="700" y1="147" x2="700" y2="87" stroke="#f4f5f7" stroke-width="6" stroke-linecap="round"/></g>
+<g><animateTransform attributeName="transform" type="rotate" from="60 700 135" to="420 700 135" dur="10s" repeatCount="indefinite"/><line x1="700" y1="147" x2="700" y2="63" stroke="#f4f5f7" stroke-width="4" stroke-linecap="round"/></g>
+<g><animateTransform attributeName="transform" type="rotate" from="0 700 135" to="360 700 135" dur="2.5s" repeatCount="indefinite"/><line x1="700" y1="147" x2="700" y2="55" stroke="#f08a3c" stroke-width="1.6" stroke-linecap="round"/></g>
+<circle cx="700" cy="135" r="5" fill="#f08a3c" stroke="#15181c" stroke-width="2"/>
+<circle cx="700" cy="135" r="92" fill="#000" opacity="0"><animate attributeName="opacity" values="0;0;0.62;0.62;0;0" keyTimes="0;0.6;0.66;0.9;0.96;1" dur="8s" repeatCount="indefinite"/></circle>
+<g opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.6;0.66;0.9;0.96;1" dur="8s" repeatCount="indefinite"/><rect x="506" y="121" width="64" height="40" rx="8" fill="#f6f8fa" stroke="#d0d7de"/><text x="538" y="136" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="9" fill="#57606a">AOD</text><text x="538" y="151" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="9" font-weight="700" fill="#3fb950">OFFLOADED</text></g>
+</g>
+</svg>

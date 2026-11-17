@@ -1,0 +1,10 @@
+out/
+speed/
+*.apk
+*.idsig
+*.keystore
+*.jks
+.ks-pass
+tools/google-watchface/
+__pycache__/
+.DS_Store

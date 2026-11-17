@@ -1,0 +1,480 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Heritage Clean - personal WFF v3 analog face for Galaxy Watch 4 (450x450).
+  Inspired by Samsung Heritage Classic, decluttered: dark charcoal dial, one accent colour
+  (subtle orange or subtle blue, switchable in Customise), three sub-dials (battery, heart rate, steps),
+  date + Mumbai time at the top, sword hands, optional seconds hand (Customise toggle).
+  v3 preview: accents orange/blue/silver/metallic black, glass numeral badges + sub-dials + pill,
+  ECG sweep behind heart rate, AOD day-date window at 3. v2: hour numerals, glass sub-dials + date pill, animated heartbeat (on wake/tap) + ECG trace.
+  AOD: orange ticks + orange hour hand, white minute hand with orange rim dot, Mumbai + am/pm.
+-->
+<WatchFace width="450" height="450" clipShape="CIRCLE">
+  <Metadata key="CLOCK_TYPE" value="ANALOG"/>
+  <Metadata key="PREVIEW_TIME" value="10:08:32"/>
+  <UserConfigurations>
+    <ColorConfiguration id="theme" displayName="theme_label" defaultValue="orange">
+      <ColorOption id="orange" displayName="theme_orange" colors="#FFE8843C #FF3A2414"/>
+      <ColorOption id="blue" displayName="theme_blue" colors="#FF4AA8F0 #FF132A40"/>
+      <ColorOption id="silver" displayName="theme_silver" colors="#FFCDD2D9 #FF2C2F34"/>
+      <ColorOption id="black" displayName="theme_black" colors="#FF8C939C #FF16181B"/>
+    </ColorConfiguration>
+    <BooleanConfiguration id="showSeconds" displayName="seconds_label" defaultValue="TRUE"/>
+    <BooleanConfiguration id="heartAnim" displayName="heartanim_label" defaultValue="TRUE"/>
+  </UserConfigurations>
+  <BitmapFonts>
+    <BitmapFont name="mumbai_ampm">
+      <Word name="00" resource="aod_ampm_am" width="30" height="22"/>
+      <Word name="01" resource="aod_ampm_am" width="30" height="22"/>
+      <Word name="02" resource="aod_ampm_am" width="30" height="22"/>
+      <Word name="03" resource="aod_ampm_am" width="30" height="22"/>
+      <Word name="04" resource="aod_ampm_am" width="30" height="22"/>
+      <Word name="05" resource="aod_ampm_am" width="30" height="22"/>
+      <Word name="06" resource="aod_ampm_am" width="30" height="22"/>
+      <Word name="07" resource="aod_ampm_am" width="30" height="22"/>
+      <Word name="08" resource="aod_ampm_am" width="30" height="22"/>
+      <Word name="09" resource="aod_ampm_am" width="30" height="22"/>
+      <Word name="10" resource="aod_ampm_am" width="30" height="22"/>
+      <Word name="11" resource="aod_ampm_am" width="30" height="22"/>
+      <Word name="12" resource="aod_ampm_pm" width="30" height="22"/>
+      <Word name="13" resource="aod_ampm_pm" width="30" height="22"/>
+      <Word name="14" resource="aod_ampm_pm" width="30" height="22"/>
+      <Word name="15" resource="aod_ampm_pm" width="30" height="22"/>
+      <Word name="16" resource="aod_ampm_pm" width="30" height="22"/>
+      <Word name="17" resource="aod_ampm_pm" width="30" height="22"/>
+      <Word name="18" resource="aod_ampm_pm" width="30" height="22"/>
+      <Word name="19" resource="aod_ampm_pm" width="30" height="22"/>
+      <Word name="20" resource="aod_ampm_pm" width="30" height="22"/>
+      <Word name="21" resource="aod_ampm_pm" width="30" height="22"/>
+      <Word name="22" resource="aod_ampm_pm" width="30" height="22"/>
+      <Word name="23" resource="aod_ampm_pm" width="30" height="22"/>
+    </BitmapFont>
+    <BitmapFont name="mumbai_ampm_s">
+      <Word name="00" resource="ampm_s_am" width="24" height="20"/>
+      <Word name="01" resource="ampm_s_am" width="24" height="20"/>
+      <Word name="02" resource="ampm_s_am" width="24" height="20"/>
+      <Word name="03" resource="ampm_s_am" width="24" height="20"/>
+      <Word name="04" resource="ampm_s_am" width="24" height="20"/>
+      <Word name="05" resource="ampm_s_am" width="24" height="20"/>
+      <Word name="06" resource="ampm_s_am" width="24" height="20"/>
+      <Word name="07" resource="ampm_s_am" width="24" height="20"/>
+      <Word name="08" resource="ampm_s_am" width="24" height="20"/>
+      <Word name="09" resource="ampm_s_am" width="24" height="20"/>
+      <Word name="10" resource="ampm_s_am" width="24" height="20"/>
+      <Word name="11" resource="ampm_s_am" width="24" height="20"/>
+      <Word name="12" resource="ampm_s_pm" width="24" height="20"/>
+      <Word name="13" resource="ampm_s_pm" width="24" height="20"/>
+      <Word name="14" resource="ampm_s_pm" width="24" height="20"/>
+      <Word name="15" resource="ampm_s_pm" width="24" height="20"/>
+      <Word name="16" resource="ampm_s_pm" width="24" height="20"/>
+      <Word name="17" resource="ampm_s_pm" width="24" height="20"/>
+      <Word name="18" resource="ampm_s_pm" width="24" height="20"/>
+      <Word name="19" resource="ampm_s_pm" width="24" height="20"/>
+      <Word name="20" resource="ampm_s_pm" width="24" height="20"/>
+      <Word name="21" resource="ampm_s_pm" width="24" height="20"/>
+      <Word name="22" resource="ampm_s_pm" width="24" height="20"/>
+      <Word name="23" resource="ampm_s_pm" width="24" height="20"/>
+    </BitmapFont>
+  </BitmapFonts>
+  <Scene backgroundColor="#FF000000">
+
+    <!-- ================= ACTIVE ================= -->
+    <Group name="active" x="0" y="0" width="450" height="450" alpha="255">
+      <Variant mode="AMBIENT" target="alpha" value="0"/>
+
+      <!-- charcoal dial with soft centre light -->
+      <PartDraw x="0" y="0" width="450" height="450">
+        <Ellipse x="0" y="0" width="450" height="450">
+          <Fill color="#FF15171A">
+            <RadialGradient centerX="225" centerY="190" radius="300" colors="#FF2A2D32 #FF17191C #FF0A0B0D" positions="0 0.6 1"/>
+          </Fill>
+        </Ellipse>
+      </PartDraw>
+      <!-- fine outer rim -->
+      <PartDraw x="0" y="0" width="450" height="450">
+        <Ellipse x="4" y="4" width="442" height="442">
+          <Stroke color="#FF2B2E34" thickness="2"/>
+        </Ellipse>
+      </PartDraw>
+      <PartImage x="0" y="0" width="450" height="450">
+        <Image resource="dial_active"/>
+      </PartImage>
+      <!-- accent 12 o'clock marker -->
+      <PartDraw x="211" y="10" width="28" height="30">
+        <Rectangle x="5" y="0" width="7" height="26">
+          <Fill color="[CONFIGURATION.theme.0]"/>
+        </Rectangle>
+        <Rectangle x="16" y="0" width="7" height="26">
+          <Fill color="[CONFIGURATION.theme.0]"/>
+        </Rectangle>
+      </PartDraw>
+
+      <!-- hour numerals on small glass badges (12 in accent) -->
+      <Group name="numerals" x="0" y="0" width="450" height="450">
+        <PartDraw x="295" y="60" width="32" height="32">
+          <Ellipse x="0" y="0" width="32" height="32"><Fill color="#990C0D10"/></Ellipse>
+          <Ellipse x="0" y="0" width="32" height="32">
+            <Fill color="#14FFFFFF"><LinearGradient startX="0" startY="0" endX="0" endY="32" colors="#30FFFFFF #0EFFFFFF #06FFFFFF" positions="0 0.55 1"/></Fill>
+            <Stroke color="#40FFFFFF" thickness="1.2"><LinearGradient startX="0" startY="0" endX="0" endY="32" colors="#8CFFFFFF #14FFFFFF #33FFFFFF" positions="0 0.6 1"/></Stroke>
+          </Ellipse>
+        </PartDraw>
+        <PartDraw x="358" y="123" width="32" height="32">
+          <Ellipse x="0" y="0" width="32" height="32"><Fill color="#990C0D10"/></Ellipse>
+          <Ellipse x="0" y="0" width="32" height="32">
+            <Fill color="#14FFFFFF"><LinearGradient startX="0" startY="0" endX="0" endY="32" colors="#30FFFFFF #0EFFFFFF #06FFFFFF" positions="0 0.55 1"/></Fill>
+            <Stroke color="#40FFFFFF" thickness="1.2"><LinearGradient startX="0" startY="0" endX="0" endY="32" colors="#8CFFFFFF #14FFFFFF #33FFFFFF" positions="0 0.6 1"/></Stroke>
+          </Ellipse>
+        </PartDraw>
+        <PartDraw x="381" y="209" width="32" height="32">
+          <Ellipse x="0" y="0" width="32" height="32"><Fill color="#990C0D10"/></Ellipse>
+          <Ellipse x="0" y="0" width="32" height="32">
+            <Fill color="#14FFFFFF"><LinearGradient startX="0" startY="0" endX="0" endY="32" colors="#30FFFFFF #0EFFFFFF #06FFFFFF" positions="0 0.55 1"/></Fill>
+            <Stroke color="#40FFFFFF" thickness="1.2"><LinearGradient startX="0" startY="0" endX="0" endY="32" colors="#8CFFFFFF #14FFFFFF #33FFFFFF" positions="0 0.6 1"/></Stroke>
+          </Ellipse>
+        </PartDraw>
+        <PartDraw x="358" y="295" width="32" height="32">
+          <Ellipse x="0" y="0" width="32" height="32"><Fill color="#990C0D10"/></Ellipse>
+          <Ellipse x="0" y="0" width="32" height="32">
+            <Fill color="#14FFFFFF"><LinearGradient startX="0" startY="0" endX="0" endY="32" colors="#30FFFFFF #0EFFFFFF #06FFFFFF" positions="0 0.55 1"/></Fill>
+            <Stroke color="#40FFFFFF" thickness="1.2"><LinearGradient startX="0" startY="0" endX="0" endY="32" colors="#8CFFFFFF #14FFFFFF #33FFFFFF" positions="0 0.6 1"/></Stroke>
+          </Ellipse>
+        </PartDraw>
+        <PartDraw x="295" y="358" width="32" height="32">
+          <Ellipse x="0" y="0" width="32" height="32"><Fill color="#990C0D10"/></Ellipse>
+          <Ellipse x="0" y="0" width="32" height="32">
+            <Fill color="#14FFFFFF"><LinearGradient startX="0" startY="0" endX="0" endY="32" colors="#30FFFFFF #0EFFFFFF #06FFFFFF" positions="0 0.55 1"/></Fill>
+            <Stroke color="#40FFFFFF" thickness="1.2"><LinearGradient startX="0" startY="0" endX="0" endY="32" colors="#8CFFFFFF #14FFFFFF #33FFFFFF" positions="0 0.6 1"/></Stroke>
+          </Ellipse>
+        </PartDraw>
+        <PartDraw x="209" y="381" width="32" height="32">
+          <Ellipse x="0" y="0" width="32" height="32"><Fill color="#990C0D10"/></Ellipse>
+          <Ellipse x="0" y="0" width="32" height="32">
+            <Fill color="#14FFFFFF"><LinearGradient startX="0" startY="0" endX="0" endY="32" colors="#30FFFFFF #0EFFFFFF #06FFFFFF" positions="0 0.55 1"/></Fill>
+            <Stroke color="#40FFFFFF" thickness="1.2"><LinearGradient startX="0" startY="0" endX="0" endY="32" colors="#8CFFFFFF #14FFFFFF #33FFFFFF" positions="0 0.6 1"/></Stroke>
+          </Ellipse>
+        </PartDraw>
+        <PartDraw x="123" y="358" width="32" height="32">
+          <Ellipse x="0" y="0" width="32" height="32"><Fill color="#990C0D10"/></Ellipse>
+          <Ellipse x="0" y="0" width="32" height="32">
+            <Fill color="#14FFFFFF"><LinearGradient startX="0" startY="0" endX="0" endY="32" colors="#30FFFFFF #0EFFFFFF #06FFFFFF" positions="0 0.55 1"/></Fill>
+            <Stroke color="#40FFFFFF" thickness="1.2"><LinearGradient startX="0" startY="0" endX="0" endY="32" colors="#8CFFFFFF #14FFFFFF #33FFFFFF" positions="0 0.6 1"/></Stroke>
+          </Ellipse>
+        </PartDraw>
+        <PartDraw x="60" y="295" width="32" height="32">
+          <Ellipse x="0" y="0" width="32" height="32"><Fill color="#990C0D10"/></Ellipse>
+          <Ellipse x="0" y="0" width="32" height="32">
+            <Fill color="#14FFFFFF"><LinearGradient startX="0" startY="0" endX="0" endY="32" colors="#30FFFFFF #0EFFFFFF #06FFFFFF" positions="0 0.55 1"/></Fill>
+            <Stroke color="#40FFFFFF" thickness="1.2"><LinearGradient startX="0" startY="0" endX="0" endY="32" colors="#8CFFFFFF #14FFFFFF #33FFFFFF" positions="0 0.6 1"/></Stroke>
+          </Ellipse>
+        </PartDraw>
+        <PartDraw x="37" y="209" width="32" height="32">
+          <Ellipse x="0" y="0" width="32" height="32"><Fill color="#990C0D10"/></Ellipse>
+          <Ellipse x="0" y="0" width="32" height="32">
+            <Fill color="#14FFFFFF"><LinearGradient startX="0" startY="0" endX="0" endY="32" colors="#30FFFFFF #0EFFFFFF #06FFFFFF" positions="0 0.55 1"/></Fill>
+            <Stroke color="#40FFFFFF" thickness="1.2"><LinearGradient startX="0" startY="0" endX="0" endY="32" colors="#8CFFFFFF #14FFFFFF #33FFFFFF" positions="0 0.6 1"/></Stroke>
+          </Ellipse>
+        </PartDraw>
+        <PartDraw x="60" y="123" width="32" height="32">
+          <Ellipse x="0" y="0" width="32" height="32"><Fill color="#990C0D10"/></Ellipse>
+          <Ellipse x="0" y="0" width="32" height="32">
+            <Fill color="#14FFFFFF"><LinearGradient startX="0" startY="0" endX="0" endY="32" colors="#30FFFFFF #0EFFFFFF #06FFFFFF" positions="0 0.55 1"/></Fill>
+            <Stroke color="#40FFFFFF" thickness="1.2"><LinearGradient startX="0" startY="0" endX="0" endY="32" colors="#8CFFFFFF #14FFFFFF #33FFFFFF" positions="0 0.6 1"/></Stroke>
+          </Ellipse>
+        </PartDraw>
+        <PartDraw x="123" y="60" width="32" height="32">
+          <Ellipse x="0" y="0" width="32" height="32"><Fill color="#990C0D10"/></Ellipse>
+          <Ellipse x="0" y="0" width="32" height="32">
+            <Fill color="#14FFFFFF"><LinearGradient startX="0" startY="0" endX="0" endY="32" colors="#30FFFFFF #0EFFFFFF #06FFFFFF" positions="0 0.55 1"/></Fill>
+            <Stroke color="#40FFFFFF" thickness="1.2"><LinearGradient startX="0" startY="0" endX="0" endY="32" colors="#8CFFFFFF #14FFFFFF #33FFFFFF" positions="0 0.6 1"/></Stroke>
+          </Ellipse>
+        </PartDraw>
+        <PartDraw x="209" y="37" width="32" height="32">
+          <Ellipse x="0" y="0" width="32" height="32"><Fill color="#990C0D10"/></Ellipse>
+          <Ellipse x="0" y="0" width="32" height="32">
+            <Fill color="#14FFFFFF"><LinearGradient startX="0" startY="0" endX="0" endY="32" colors="#30FFFFFF #0EFFFFFF #06FFFFFF" positions="0 0.55 1"/></Fill>
+            <Stroke color="#40FFFFFF" thickness="1.2"><LinearGradient startX="0" startY="0" endX="0" endY="32" colors="#8CFFFFFF #14FFFFFF #33FFFFFF" positions="0 0.6 1"/></Stroke>
+          </Ellipse>
+        </PartDraw>
+        <PartText x="295" y="63" width="32" height="26"><Text align="CENTER"><Font family="SYNC_TO_DEVICE" size="18" weight="SEMI_BOLD" color="#FFD2D6DB">1</Font></Text></PartText>
+        <PartText x="358" y="126" width="32" height="26"><Text align="CENTER"><Font family="SYNC_TO_DEVICE" size="18" weight="SEMI_BOLD" color="#FFD2D6DB">2</Font></Text></PartText>
+        <PartText x="381" y="212" width="32" height="26"><Text align="CENTER"><Font family="SYNC_TO_DEVICE" size="18" weight="SEMI_BOLD" color="#FFD2D6DB">3</Font></Text></PartText>
+        <PartText x="358" y="298" width="32" height="26"><Text align="CENTER"><Font family="SYNC_TO_DEVICE" size="18" weight="SEMI_BOLD" color="#FFD2D6DB">4</Font></Text></PartText>
+        <PartText x="295" y="361" width="32" height="26"><Text align="CENTER"><Font family="SYNC_TO_DEVICE" size="18" weight="SEMI_BOLD" color="#FFD2D6DB">5</Font></Text></PartText>
+        <PartText x="209" y="384" width="32" height="26"><Text align="CENTER"><Font family="SYNC_TO_DEVICE" size="18" weight="SEMI_BOLD" color="#FFD2D6DB">6</Font></Text></PartText>
+        <PartText x="123" y="361" width="32" height="26"><Text align="CENTER"><Font family="SYNC_TO_DEVICE" size="18" weight="SEMI_BOLD" color="#FFD2D6DB">7</Font></Text></PartText>
+        <PartText x="60" y="298" width="32" height="26"><Text align="CENTER"><Font family="SYNC_TO_DEVICE" size="18" weight="SEMI_BOLD" color="#FFD2D6DB">8</Font></Text></PartText>
+        <PartText x="37" y="212" width="32" height="26"><Text align="CENTER"><Font family="SYNC_TO_DEVICE" size="18" weight="SEMI_BOLD" color="#FFD2D6DB">9</Font></Text></PartText>
+        <PartText x="60" y="126" width="32" height="26"><Text align="CENTER"><Font family="SYNC_TO_DEVICE" size="17" weight="SEMI_BOLD" color="#FFD2D6DB">10</Font></Text></PartText>
+        <PartText x="123" y="63" width="32" height="26"><Text align="CENTER"><Font family="SYNC_TO_DEVICE" size="17" weight="SEMI_BOLD" color="#FFD2D6DB">11</Font></Text></PartText>
+        <PartText x="209" y="40" width="32" height="26"><Text align="CENTER"><Font family="SYNC_TO_DEVICE" size="17" weight="SEMI_BOLD" color="[CONFIGURATION.theme.0]">12</Font></Text></PartText>
+      </Group>
+
+      <!-- glass pill behind date + Mumbai: dark translucent base, white gradient sheen, light-catching rim -->
+      <PartDraw x="125" y="96" width="200" height="72">
+        <RoundRectangle x="0" y="0" width="200" height="72" cornerRadiusX="26" cornerRadiusY="26">
+          <Fill color="#990C0D10"/>
+        </RoundRectangle>
+        <RoundRectangle x="0" y="0" width="200" height="72" cornerRadiusX="26" cornerRadiusY="26">
+          <Fill color="#14FFFFFF">
+            <LinearGradient startX="0" startY="0" endX="0" endY="72" colors="#26FFFFFF #0CFFFFFF #05FFFFFF" positions="0 0.5 1"/>
+          </Fill>
+          <Stroke color="#40FFFFFF" thickness="1.5">
+            <LinearGradient startX="0" startY="0" endX="0" endY="72" colors="#66FFFFFF #10FFFFFF #26FFFFFF" positions="0 0.6 1"/>
+          </Stroke>
+        </RoundRectangle>
+      </PartDraw>
+
+      <!-- date: fixed DAY_OF_WEEK + DATE complications (scene-level slots 1 + 2), offload-safe -->
+
+      <!-- Mumbai: accent label, real clock in Asia/Kolkata, AM/PM in Kolkata time -->
+      <PartText x="105" y="138" width="114" height="22">
+        <Text align="END">
+          <Font family="SYNC_TO_DEVICE" size="14" weight="SEMI_BOLD" color="[CONFIGURATION.theme.0]" letterSpacing="0.1">MUMBAI</Font>
+        </Text>
+      </PartText>
+      <DigitalClock x="0" y="0" width="450" height="450">
+        <Localization timeZone="Asia/Kolkata"/>
+        <TimeText format="hh:mm" hourFormat="SYNC_TO_DEVICE" align="START" x="225" y="136" width="58" height="24">
+          <Font family="SYNC_TO_DEVICE" size="18" weight="MEDIUM" color="#FFC9CDD3"/>
+        </TimeText>
+      </DigitalClock>
+      <!-- Mumbai am/pm: hh (24 h) in Asia/Kolkata through the mumbai_ampm_s bitmap font (00-11 am, 12-23 pm) -->
+      <DigitalClock x="0" y="0" width="450" height="450">
+        <Localization timeZone="Asia/Kolkata"/>
+        <TimeText format="hh" hourFormat="24" align="START" x="277" y="140" width="34" height="20">
+          <BitmapFont family="mumbai_ampm_s" size="20" color="#FF8C929A"/>
+        </TimeText>
+      </DigitalClock>
+
+      <!-- glass sub-dials: battery (left), heart rate (right, red-tinted rim), steps (bottom) -->
+      <PartDraw x="76" y="176" width="104" height="104">
+        <Ellipse x="0" y="0" width="104" height="104"><Fill color="#B30C0D10"/></Ellipse>
+        <Ellipse x="0" y="0" width="104" height="104">
+          <Fill color="#14FFFFFF"><LinearGradient startX="0" startY="0" endX="0" endY="104" colors="#3DFFFFFF #12FFFFFF #08FFFFFF" positions="0 0.55 1"/></Fill>
+          <Stroke color="#40FFFFFF" thickness="2"><LinearGradient startX="0" startY="0" endX="0" endY="104" colors="#A6FFFFFF #1AFFFFFF #40FFFFFF" positions="0 0.6 1"/></Stroke>
+        </Ellipse>
+        <Ellipse x="20" y="7" width="64" height="36"><Fill color="#10FFFFFF"><LinearGradient startX="0" startY="7" endX="0" endY="43" colors="#33FFFFFF #00FFFFFF" positions="0 1"/></Fill></Ellipse>
+      </PartDraw>
+      <PartDraw x="270" y="176" width="104" height="104">
+        <Ellipse x="0" y="0" width="104" height="104"><Fill color="#B30C0D10"/></Ellipse>
+        <Ellipse x="0" y="0" width="104" height="104">
+          <Fill color="#14FFFFFF"><LinearGradient startX="0" startY="0" endX="0" endY="104" colors="#3DFFFFFF #12FFFFFF #08FFFFFF" positions="0 0.55 1"/></Fill>
+          <Stroke color="#40FF5A6A" thickness="2"><LinearGradient startX="0" startY="0" endX="0" endY="104" colors="#B3FF6474 #1AFFFFFF #59C8102E" positions="0 0.6 1"/></Stroke>
+        </Ellipse>
+        <Ellipse x="20" y="7" width="64" height="36"><Fill color="#10FFFFFF"><LinearGradient startX="0" startY="7" endX="0" endY="43" colors="#33FFFFFF #00FFFFFF" positions="0 1"/></Fill></Ellipse>
+      </PartDraw>
+      <PartDraw x="173" y="276" width="104" height="104">
+        <Ellipse x="0" y="0" width="104" height="104"><Fill color="#B30C0D10"/></Ellipse>
+        <Ellipse x="0" y="0" width="104" height="104">
+          <Fill color="#14FFFFFF"><LinearGradient startX="0" startY="0" endX="0" endY="104" colors="#3DFFFFFF #12FFFFFF #08FFFFFF" positions="0 0.55 1"/></Fill>
+          <Stroke color="#40FFFFFF" thickness="2"><LinearGradient startX="0" startY="0" endX="0" endY="104" colors="#A6FFFFFF #1AFFFFFF #40FFFFFF" positions="0 0.6 1"/></Stroke>
+        </Ellipse>
+        <Ellipse x="20" y="7" width="64" height="36"><Fill color="#10FFFFFF"><LinearGradient startX="0" startY="7" endX="0" endY="43" colors="#33FFFFFF #00FFFFFF" positions="0 1"/></Fill></Ellipse>
+      </PartDraw>
+
+      <!-- battery: progress ring + number -->
+      <PartDraw x="0" y="0" width="450" height="450">
+        <Arc centerX="128" centerY="228" width="88" height="88" startAngle="0" endAngle="360">
+          <Stroke color="#FF24272D" thickness="5"/>
+        </Arc>
+        <Arc centerX="128" centerY="228" width="88" height="88" startAngle="0" endAngle="1">
+          <Transform target="endAngle" value="360 * clamp([BATTERY_PERCENT], 1, 100) / 100"/>
+          <Stroke color="[CONFIGURATION.theme.0]" thickness="5" cap="ROUND"/>
+        </Arc>
+      </PartDraw>
+      <PartText x="80" y="204" width="96" height="36">
+        <Text align="CENTER">
+          <Font family="SYNC_TO_DEVICE" size="28" weight="SEMI_BOLD" color="#FFF2F3F5">
+            <Template>%s<Parameter expression="[BATTERY_PERCENT]"/></Template>
+          </Font>
+        </Text>
+      </PartText>
+      <PartText x="80" y="238" width="96" height="18">
+        <Text align="CENTER">
+          <Font family="SYNC_TO_DEVICE" size="11" weight="SEMI_BOLD" color="#FF8C929A" letterSpacing="0.1">BATTERY</Font>
+        </Text>
+      </PartText>
+
+    </Group>
+
+      <!-- active date (fixed system complications) -->
+      <ComplicationSlot slotId="1" x="90" y="104" width="118" height="30" alpha="255" displayName="date_slot_label"
+          supportedTypes="SHORT_TEXT" isCustomizable="FALSE">
+        <Variant mode="AMBIENT" target="alpha" value="0"/>
+        <DefaultProviderPolicy defaultSystemProvider="DAY_OF_WEEK" defaultSystemProviderType="SHORT_TEXT"/>
+        <BoundingBox x="0" y="0" width="118" height="30"/>
+        <Complication type="SHORT_TEXT">
+          <PartText x="0" y="0" width="118" height="30"><Text align="END"><Font family="SYNC_TO_DEVICE" size="22" weight="SEMI_BOLD" color="[CONFIGURATION.theme.0]"><Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template></Font></Text></PartText>
+        </Complication>
+      </ComplicationSlot>
+      <ComplicationSlot slotId="2" x="216" y="104" width="100" height="30" alpha="255" displayName="date_slot_label"
+          supportedTypes="SHORT_TEXT" isCustomizable="FALSE">
+        <Variant mode="AMBIENT" target="alpha" value="0"/>
+        <DefaultProviderPolicy defaultSystemProvider="DATE" defaultSystemProviderType="SHORT_TEXT"/>
+        <BoundingBox x="0" y="0" width="100" height="30"/>
+        <Complication type="SHORT_TEXT">
+          <PartText x="0" y="0" width="100" height="30"><Text align="START"><Font family="SYNC_TO_DEVICE" size="22" weight="SEMI_BOLD" color="#FFECEDEF"><Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template></Font></Text></PartText>
+        </Complication>
+      </ComplicationSlot>
+
+      <!-- heart rate (Samsung Health, Google fallback); slots must be direct children of Scene -->
+      <ComplicationSlot slotId="0" x="274" y="180" width="96" height="96" displayName="hr_slot_label"
+          supportedTypes="SHORT_TEXT EMPTY" isCustomizable="TRUE">
+        <Variant mode="AMBIENT" target="alpha" value="0"/>
+        <DefaultProviderPolicy
+            defaultSystemProvider="HEART_RATE" defaultSystemProviderType="SHORT_TEXT"
+            primaryProvider="com.samsung.android.wear.shealth/com.samsung.android.wear.shealth.complications.heartrate.HeartrateComplicationProviderService"
+            primaryProviderType="SHORT_TEXT"/>
+        <BoundingOval x="0" y="0" width="96" height="96"/>
+        <Complication type="SHORT_TEXT">
+          <!-- ECG sweep in the background (Customise "Pulse animation", ~10 % CPU while the screen is on) -->
+          <Group name="pulse_bg" x="0" y="0" width="96" height="96">
+            <BooleanConfiguration id="heartAnim">
+              <BooleanOption id="TRUE">
+                <Group name="pulse_anim" x="0" y="0" width="96" height="96">
+                  <PartAnimatedImage x="6" y="36" width="84" height="34">
+                    <AnimationController play="ON_VISIBLE TAP" repeat="TRUE" beforePlaying="FIRST_FRAME" afterPlaying="FIRST_FRAME"/>
+                    <SequenceImages loopCount="1" frameRate="12"><Image resource="pulse_f00"/><Image resource="pulse_f01"/><Image resource="pulse_f02"/><Image resource="pulse_f03"/><Image resource="pulse_f04"/><Image resource="pulse_f05"/><Image resource="pulse_f06"/><Image resource="pulse_f07"/><Image resource="pulse_f08"/><Image resource="pulse_f09"/><Image resource="pulse_f10"/><Image resource="pulse_f11"/><Image resource="pulse_f12"/><Image resource="pulse_f13"/><Image resource="pulse_f14"/><Image resource="pulse_f15"/></SequenceImages>
+                  </PartAnimatedImage>
+                </Group>
+              </BooleanOption>
+              <BooleanOption id="FALSE">
+                <Group name="pulse_still" x="0" y="0" width="96" height="96">
+                  <PartImage x="6" y="36" width="84" height="34"><Image resource="pulse_static"/></PartImage>
+                </Group>
+              </BooleanOption>
+            </BooleanConfiguration>
+          </Group>
+          <PartImage x="34" y="6" width="28" height="28"><Image resource="heart_f00"/></PartImage>
+          <PartText x="0" y="33" width="96" height="34">
+            <Text align="CENTER">
+              <Font family="SYNC_TO_DEVICE" size="27" weight="SEMI_BOLD" color="#FFF2F3F5">
+                <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
+              </Font>
+            </Text>
+          </PartText>
+          <PartText x="0" y="63" width="96" height="14">
+            <Text align="CENTER">
+              <Font family="SYNC_TO_DEVICE" size="10" weight="SEMI_BOLD" color="#FFFF8A96" letterSpacing="0.1">BPM</Font>
+            </Text>
+          </PartText>
+        </Complication>
+      </ComplicationSlot>
+
+    <Group name="active_front" x="0" y="0" width="450" height="450" alpha="255">
+      <Variant mode="AMBIENT" target="alpha" value="0"/>
+      <!-- steps: progress ring + number -->
+      <PartDraw x="0" y="0" width="450" height="450">
+        <Arc centerX="225" centerY="328" width="88" height="88" startAngle="0" endAngle="360">
+          <Stroke color="#FF24272D" thickness="5"/>
+        </Arc>
+        <Arc centerX="225" centerY="328" width="88" height="88" startAngle="0" endAngle="1">
+          <Transform target="endAngle" value="360 * clamp([STEP_PERCENT], 1, 100) / 100"/>
+          <Stroke color="[CONFIGURATION.theme.0]" thickness="5" cap="ROUND"/>
+        </Arc>
+      </PartDraw>
+      <PartText x="177" y="304" width="96" height="34">
+        <Text align="CENTER">
+          <Font family="SYNC_TO_DEVICE" size="24" weight="SEMI_BOLD" color="#FFF2F3F5">
+            <Template>%s<Parameter expression="[STEP_COUNT]"/></Template>
+          </Font>
+        </Text>
+      </PartText>
+      <PartText x="177" y="336" width="96" height="18">
+        <Text align="CENTER">
+          <Font family="SYNC_TO_DEVICE" size="11" weight="SEMI_BOLD" color="#FF8C929A" letterSpacing="0.1">STEPS</Font>
+        </Text>
+      </PartText>
+
+      <!-- hands -->
+      <AnalogClock x="0" y="0" width="450" height="450">
+        <HourHand resource="hand_hour" x="208" y="97" width="34" height="150" pivotX="0.5" pivotY="0.8533"/>
+        <MinuteHand resource="hand_minute" x="212" y="35" width="26" height="214" pivotX="0.5" pivotY="0.8879"/>
+      </AnalogClock>
+      <BooleanConfiguration id="showSeconds">
+        <BooleanOption id="TRUE">
+          <AnalogClock x="0" y="0" width="450" height="450">
+            <SecondHand resource="hand_second" x="218" y="29" width="14" height="250" pivotX="0.5" pivotY="0.784" tintColor="[CONFIGURATION.theme.0]"/>
+          </AnalogClock>
+        </BooleanOption>
+      </BooleanConfiguration>
+      <!-- centre cap -->
+      <PartDraw x="209" y="209" width="32" height="32">
+        <Ellipse x="0" y="0" width="32" height="32">
+          <Fill color="[CONFIGURATION.theme.0]"/>
+        </Ellipse>
+        <Ellipse x="10" y="10" width="12" height="12">
+          <Fill color="#FF111214"/>
+        </Ellipse>
+      </PartDraw>
+    </Group>
+
+    <!-- ================= AOD: bold bright analog + Mumbai ================= -->
+    <Group name="aod" x="0" y="0" width="450" height="450" alpha="0">
+      <Variant mode="AMBIENT" target="alpha" value="255"/>
+      <PartImage x="0" y="0" width="450" height="450" tintColor="[CONFIGURATION.theme.0]">
+        <Image resource="dial_aod"/>
+      </PartImage>
+      <!-- glass day-date window near 3 o'clock; its text comes from complication slots 3 + 4 -->
+      <PartDraw x="258" y="204" width="134" height="42">
+        <RoundRectangle x="0" y="0" width="134" height="42" cornerRadiusX="11" cornerRadiusY="11"><Fill color="#E6101114"/></RoundRectangle>
+        <RoundRectangle x="0" y="0" width="134" height="42" cornerRadiusX="11" cornerRadiusY="11">
+          <Fill color="#10FFFFFF"><LinearGradient startX="0" startY="0" endX="0" endY="42" colors="#26FFFFFF #06FFFFFF" positions="0 1"/></Fill>
+          <Stroke color="[CONFIGURATION.theme.0]" thickness="2"><LinearGradient startX="0" startY="0" endX="0" endY="42" colors="[CONFIGURATION.theme.0] [CONFIGURATION.theme.1]" positions="0 1"/></Stroke>
+        </RoundRectangle>
+      </PartDraw>
+      <PartText x="0" y="292" width="450" height="18">
+        <Text align="CENTER">
+          <Font family="SYNC_TO_DEVICE" size="13" weight="SEMI_BOLD" color="[CONFIGURATION.theme.0]" letterSpacing="0.1">MUMBAI</Font>
+        </Text>
+      </PartText>
+      <DigitalClock x="0" y="0" width="450" height="450">
+        <Localization timeZone="Asia/Kolkata"/>
+        <TimeText format="hh:mm" hourFormat="SYNC_TO_DEVICE" align="CENTER" x="151" y="308" width="150" height="32">
+          <Font family="SYNC_TO_DEVICE" size="26" weight="MEDIUM" color="#FFFFFFFF"/>
+        </TimeText>
+      </DigitalClock>
+      <!-- Mumbai am/pm as a clock element (offloadable): hh (24 h) in Asia/Kolkata drawn by the mumbai_ampm bitmap font -->
+      <DigitalClock x="0" y="0" width="450" height="450">
+        <Localization timeZone="Asia/Kolkata"/>
+        <TimeText format="hh" hourFormat="24" align="START" x="265" y="316" width="44" height="22">
+          <BitmapFont family="mumbai_ampm" size="22" color="[CONFIGURATION.theme.0]"/>
+        </TimeText>
+      </DigitalClock>
+      <!-- orange hour hand; white minute hand carrying an orange rim dot that travels with the minutes -->
+      <AnalogClock x="0" y="0" width="450" height="450">
+        <HourHand resource="aod_hour" x="210" y="97" width="30" height="150" pivotX="0.5" pivotY="0.8533" tintColor="[CONFIGURATION.theme.0]"/>
+        <MinuteHand resource="aod_minute" x="213" y="1" width="24" height="232" pivotX="0.5" pivotY="0.9655"/>
+      </AnalogClock>
+      <AnalogClock x="0" y="0" width="450" height="450">
+        <MinuteHand resource="aod_minute_dot" x="213" y="1" width="24" height="232" pivotX="0.5" pivotY="0.9655" tintColor="[CONFIGURATION.theme.0]"/>
+      </AnalogClock>
+      <PartDraw x="213" y="213" width="24" height="24">
+        <Ellipse x="0" y="0" width="24" height="24">
+          <Fill color="[CONFIGURATION.theme.0]"/>
+        </Ellipse>
+        <Ellipse x="8" y="8" width="8" height="8">
+          <Fill color="#FF000000"/>
+        </Ellipse>
+      </PartDraw>
+    </Group>
+      <!-- AOD day-date window text (fixed system complications, drawn above the AOD group) -->
+      <ComplicationSlot slotId="3" x="263" y="209" width="46" height="32" alpha="0" displayName="date_slot_label"
+          supportedTypes="SHORT_TEXT" isCustomizable="FALSE">
+        <Variant mode="AMBIENT" target="alpha" value="255"/>
+        <DefaultProviderPolicy defaultSystemProvider="DAY_OF_WEEK" defaultSystemProviderType="SHORT_TEXT"/>
+        <BoundingBox x="0" y="0" width="46" height="32"/>
+        <Complication type="SHORT_TEXT">
+          <PartText x="0" y="0" width="46" height="32"><Text align="END"><Font family="SYNC_TO_DEVICE" size="19" weight="SEMI_BOLD" color="[CONFIGURATION.theme.0]"><Upper><Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template></Upper></Font></Text></PartText>
+        </Complication>
+      </ComplicationSlot>
+      <ComplicationSlot slotId="4" x="315" y="209" width="72" height="32" alpha="0" displayName="date_slot_label"
+          supportedTypes="SHORT_TEXT" isCustomizable="FALSE">
+        <Variant mode="AMBIENT" target="alpha" value="255"/>
+        <DefaultProviderPolicy defaultSystemProvider="DATE" defaultSystemProviderType="SHORT_TEXT"/>
+        <BoundingBox x="0" y="0" width="72" height="32"/>
+        <Complication type="SHORT_TEXT">
+          <PartText x="0" y="0" width="72" height="32"><Text align="START"><Font family="SYNC_TO_DEVICE" size="19" weight="SEMI_BOLD" color="#FFFFFFFF"><Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template></Font></Text></PartText>
+        </Complication>
+      </ComplicationSlot>
+  </Scene>
+</WatchFace>

@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Blue Rings v2 - personal WFF v3 face for Galaxy Watch 4 (450x450).
+  Active: gradient rings with curved numbers (steps left, battery right), gradient date + time,
+          heart rate (Samsung Health complication) with heart icon, steps, battery, Mumbai time.
+  AOD (offload-friendly: only static images/text + 2 clocks): bold bright analog hands,
+          12-tick dial, Mumbai digital time. No text built from time data sources in AOD.
+-->
+<WatchFace width="450" height="450" clipShape="CIRCLE">
+  <Metadata key="CLOCK_TYPE" value="DIGITAL"/>
+  <Metadata key="PREVIEW_TIME" value="10:08:32"/>
+  <Scene backgroundColor="#FF000000">
+
+    <!-- ============ ACTIVE: rings ============ -->
+    <Group name="rings" x="0" y="0" width="450" height="450" alpha="255">
+      <Variant mode="AMBIENT" target="alpha" value="0"/>
+      <!-- steps track + progress (left, fills bottom to top) -->
+      <PartDraw x="0" y="0" width="450" height="450">
+        <Arc centerX="225" centerY="225" width="418" height="418" startAngle="200" endAngle="340">
+          <Stroke color="#FF0E1828" thickness="14" cap="ROUND"/>
+        </Arc>
+      </PartDraw>
+      <PartDraw x="0" y="0" width="450" height="450">
+        <Arc centerX="225" centerY="225" width="418" height="418" startAngle="200" endAngle="201">
+          <Transform target="endAngle" value="200 + 140 * clamp([STEP_PERCENT], 1, 100) / 100"/>
+          <Stroke color="#FF2EA8FF" thickness="14" cap="ROUND">
+            <LinearGradient startX="0" startY="440" endX="0" endY="10" colors="#FF0039FF #FF1E8BFF #FF63E6FF" positions="0 0.55 1"/>
+          </Stroke>
+        </Arc>
+      </PartDraw>
+      <!-- battery track + progress (right, fills bottom to top); red gradient when 15 % or less -->
+      <PartDraw x="0" y="0" width="450" height="450">
+        <Arc centerX="225" centerY="225" width="418" height="418" startAngle="20" endAngle="160">
+          <Stroke color="#FF0E1828" thickness="14" cap="ROUND"/>
+        </Arc>
+      </PartDraw>
+      <Condition>
+        <Expressions>
+          <Expression name="lowBattery"><![CDATA[[BATTERY_PERCENT] <= 15]]></Expression>
+        </Expressions>
+        <Compare expression="lowBattery">
+          <PartDraw x="0" y="0" width="450" height="450">
+            <Arc centerX="225" centerY="225" width="418" height="418" startAngle="159" endAngle="160">
+              <Transform target="startAngle" value="160 - 140 * clamp([BATTERY_PERCENT], 1, 100) / 100"/>
+              <Stroke color="#FFFF3B3B" thickness="14" cap="ROUND">
+                <LinearGradient startX="0" startY="440" endX="0" endY="10" colors="#FF8A0312 #FFFF3B3B" positions="0 1"/>
+              </Stroke>
+            </Arc>
+          </PartDraw>
+        </Compare>
+        <Default>
+          <PartDraw x="0" y="0" width="450" height="450">
+            <Arc centerX="225" centerY="225" width="418" height="418" startAngle="159" endAngle="160">
+              <Transform target="startAngle" value="160 - 140 * clamp([BATTERY_PERCENT], 1, 100) / 100"/>
+              <Stroke color="#FF7CD4FF" thickness="14" cap="ROUND">
+                <LinearGradient startX="0" startY="440" endX="0" endY="10" colors="#FF0088CC #FF33C4FF #FFB8F0FF" positions="0 0.55 1"/>
+              </Stroke>
+            </Arc>
+          </PartDraw>
+        </Default>
+      </Condition>
+      <!-- curved numbers just inside the rings -->
+      <PartText x="0" y="0" width="450" height="450">
+        <TextCircular centerX="225" centerY="225" width="372" height="372" startAngle="215" endAngle="325" direction="CLOCKWISE" align="CENTER">
+          <Font family="SYNC_TO_DEVICE" size="15" weight="SEMI_BOLD" color="#FF8FD0FF" letterSpacing="0.05">
+            <Template>%s / %s STEPS<Parameter expression="[STEP_COUNT]"/><Parameter expression="[STEP_GOAL]"/></Template>
+          </Font>
+        </TextCircular>
+      </PartText>
+      <PartText x="0" y="0" width="450" height="450">
+        <TextCircular centerX="225" centerY="225" width="372" height="372" startAngle="35" endAngle="145" direction="CLOCKWISE" align="CENTER">
+          <Font family="SYNC_TO_DEVICE" size="15" weight="SEMI_BOLD" color="#FFA8E6FF" letterSpacing="0.05">
+            <Template>BATTERY %s%%<Parameter expression="[BATTERY_PERCENT]"/></Template>
+          </Font>
+        </TextCircular>
+      </PartText>
+    </Group>
+
+    <!-- ============ ACTIVE: date (gradient) ============ -->
+    <Group name="date" x="0" y="0" width="450" height="450" alpha="255">
+      <Variant mode="AMBIENT" target="alpha" value="0"/>
+      <PartText x="0" y="62" width="450" height="36" renderMode="MASK">
+        <Text align="CENTER">
+          <Font family="SYNC_TO_DEVICE" size="26" weight="SEMI_BOLD" color="#FFFFFFFF">
+            <Template>%s %s %s<Parameter expression="[DAY_OF_WEEK_S]"/><Parameter expression="[DAY]"/><Parameter expression="[MONTH_S]"/></Template>
+          </Font>
+        </Text>
+      </PartText>
+      <PartDraw x="0" y="62" width="450" height="36">
+        <Rectangle x="0" y="0" width="450" height="36">
+          <Fill color="#FF7CD4FF">
+            <LinearGradient startX="140" startY="0" endX="310" endY="0" colors="#FF2E8BFF #FF7CD4FF #FFC9F1FF" positions="0 0.5 1"/>
+          </Fill>
+        </Rectangle>
+      </PartDraw>
+    </Group>
+
+    <!-- ============ ACTIVE: time (white to ice-blue gradient) + AM/PM ============ -->
+    <Group name="time" x="0" y="0" width="450" height="450" alpha="255">
+      <Variant mode="AMBIENT" target="alpha" value="0"/>
+      <DigitalClock x="0" y="0" width="450" height="450" renderMode="MASK">
+        <TimeText format="hh:mm" hourFormat="SYNC_TO_DEVICE" align="CENTER" x="0" y="100" width="450" height="124">
+          <Font family="SYNC_TO_DEVICE" size="118" weight="SEMI_BOLD" color="#FFFFFFFF"/>
+        </TimeText>
+      </DigitalClock>
+      <PartDraw x="0" y="100" width="450" height="124">
+        <Rectangle x="0" y="0" width="450" height="124">
+          <Fill color="#FFFFFFFF">
+            <LinearGradient startX="0" startY="10" endX="0" endY="118" colors="#FFFFFFFF #FFE4F3FF #FF8CCBFF" positions="0 0.5 1"/>
+          </Fill>
+        </Rectangle>
+      </PartDraw>
+    </Group>
+    <Group name="ampm" x="0" y="0" width="450" height="450" alpha="255">
+      <Variant mode="AMBIENT" target="alpha" value="0"/>
+      <Condition>
+        <Expressions>
+          <Expression name="is12h"><![CDATA[[IS_24_HOUR_MODE] == 0]]></Expression>
+        </Expressions>
+        <Compare expression="is12h">
+          <PartText x="0" y="218" width="450" height="26">
+            <Text align="CENTER">
+              <Font family="SYNC_TO_DEVICE" size="20" weight="MEDIUM" color="#FF8A94A6">
+                <Template>%s<Parameter expression="[AMPM_STRING]"/></Template>
+              </Font>
+            </Text>
+          </PartText>
+        </Compare>
+      </Condition>
+    </Group>
+
+    <!-- ============ ACTIVE: heart rate (Samsung Health, Google fallback) ============ -->
+    <ComplicationSlot slotId="0" x="72" y="248" width="118" height="58" displayName="hr_slot_label"
+        supportedTypes="SHORT_TEXT EMPTY" isCustomizable="TRUE">
+      <Variant mode="AMBIENT" target="alpha" value="0"/>
+      <DefaultProviderPolicy
+          defaultSystemProvider="HEART_RATE" defaultSystemProviderType="SHORT_TEXT"
+          primaryProvider="com.samsung.android.wear.shealth/com.samsung.android.wear.shealth.complications.heartrate.HeartrateComplicationProviderService"
+          primaryProviderType="SHORT_TEXT"/>
+      <BoundingBox x="0" y="0" width="118" height="58"/>
+      <Complication type="SHORT_TEXT">
+        <PartImage x="8" y="5" width="30" height="30">
+          <Image resource="heart"/>
+        </PartImage>
+        <Group name="hr_value" x="0" y="0" width="118" height="58">
+          <PartText x="42" y="0" width="76" height="38" renderMode="MASK">
+            <Text align="START">
+              <Font family="SYNC_TO_DEVICE" size="30" weight="BOLD" color="#FFFFFFFF">
+                <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
+              </Font>
+            </Text>
+          </PartText>
+          <PartDraw x="42" y="0" width="76" height="38">
+            <Rectangle x="0" y="0" width="76" height="38">
+              <Fill color="#FFE0102F">
+                <LinearGradient startX="0" startY="4" endX="0" endY="34" colors="#FFFF4D5E #FFC8102E #FF8A0312" positions="0 0.55 1"/>
+              </Fill>
+            </Rectangle>
+          </PartDraw>
+        </Group>
+        <PartText x="0" y="38" width="118" height="20">
+          <Text align="CENTER">
+            <Font family="SYNC_TO_DEVICE" size="14" weight="MEDIUM" color="#FF8A94A6">BPM</Font>
+          </Text>
+        </PartText>
+      </Complication>
+    </ComplicationSlot>
+
+    <!-- ============ ACTIVE: steps + battery columns (number centred over its label) ============ -->
+    <Group name="stats" x="0" y="0" width="450" height="450" alpha="255">
+      <Variant mode="AMBIENT" target="alpha" value="0"/>
+      <Group name="steps_value" x="0" y="0" width="450" height="450">
+        <PartText x="170" y="248" width="110" height="38" renderMode="MASK">
+          <Text align="CENTER">
+            <Font family="SYNC_TO_DEVICE" size="30" weight="BOLD" color="#FFFFFFFF">
+              <Template>%s<Parameter expression="[STEP_COUNT]"/></Template>
+            </Font>
+          </Text>
+        </PartText>
+        <PartDraw x="170" y="248" width="110" height="38">
+          <Rectangle x="0" y="0" width="110" height="38">
+            <Fill color="#FF2EA8FF">
+              <LinearGradient startX="0" startY="4" endX="0" endY="34" colors="#FF8CE9FF #FF2EA8FF #FF0B5BFF" positions="0 0.5 1"/>
+            </Fill>
+          </Rectangle>
+        </PartDraw>
+      </Group>
+      <PartText x="170" y="286" width="110" height="20">
+        <Text align="CENTER">
+          <Font family="SYNC_TO_DEVICE" size="14" weight="MEDIUM" color="#FF8A94A6">STEPS</Font>
+        </Text>
+      </PartText>
+      <Group name="battery_value" x="0" y="0" width="450" height="450">
+        <PartText x="260" y="248" width="110" height="38" renderMode="MASK">
+          <Text align="CENTER">
+            <Font family="SYNC_TO_DEVICE" size="30" weight="BOLD" color="#FFFFFFFF">
+              <Template>%s%%<Parameter expression="[BATTERY_PERCENT]"/></Template>
+            </Font>
+          </Text>
+        </PartText>
+        <PartDraw x="260" y="248" width="110" height="38">
+          <Rectangle x="0" y="0" width="110" height="38">
+            <Fill color="#FF7CD4FF">
+              <LinearGradient startX="0" startY="4" endX="0" endY="34" colors="#FFD6F6FF #FF7CD4FF #FF1E9BE0" positions="0 0.5 1"/>
+            </Fill>
+          </Rectangle>
+        </PartDraw>
+      </Group>
+      <PartText x="260" y="286" width="110" height="20">
+        <Text align="CENTER">
+          <Font family="SYNC_TO_DEVICE" size="14" weight="MEDIUM" color="#FF8A94A6">BATTERY</Font>
+        </Text>
+      </PartText>
+    </Group>
+
+    <!-- ============ ACTIVE: Mumbai (real clock in Asia/Kolkata) + its AM/PM ============ -->
+    <Group name="mumbai_active" x="0" y="0" width="450" height="450" alpha="255">
+      <Variant mode="AMBIENT" target="alpha" value="0"/>
+      <PartText x="0" y="318" width="450" height="20">
+        <Text align="CENTER">
+          <Font family="SYNC_TO_DEVICE" size="14" weight="SEMI_BOLD" color="#FF2EA8FF" letterSpacing="0.1">MUMBAI</Font>
+        </Text>
+      </PartText>
+      <DigitalClock x="0" y="0" width="450" height="450">
+        <Localization timeZone="Asia/Kolkata"/>
+        <TimeText format="hh:mm" hourFormat="SYNC_TO_DEVICE" align="CENTER" x="140" y="336" width="120" height="34">
+          <Font family="SYNC_TO_DEVICE" size="26" weight="SEMI_BOLD" color="#FFE6E8EB"/>
+        </TimeText>
+      </DigitalClock>
+      <Group name="mumbai_ampm" x="0" y="0" width="450" height="450">
+        <!-- Mumbai AM/PM from UTC offset (Localization does not apply to AMPM_STRING) -->
+        <Condition>
+          <Expressions>
+            <Expression name="is24m"><![CDATA[[IS_24_HOUR_MODE] == 1]]></Expression>
+            <Expression name="mumAm"><![CDATA[((([HOUR_0_23] * 60 + [MINUTE]) - [TIMEZONE_OFFSET_MINUTES_DST] + 330 + 2880) % 1440) < 720]]></Expression>
+          </Expressions>
+          <Compare expression="is24m"><Group name="mum_24h_none" x="0" y="0" width="1" height="1"/></Compare>
+          <Compare expression="mumAm">
+            <PartText x="258" y="344" width="50" height="24">
+              <Text align="START">
+                <Font family="SYNC_TO_DEVICE" size="17" weight="MEDIUM" color="#FF8A94A6">am</Font>
+              </Text>
+            </PartText>
+          </Compare>
+          <Default>
+            <PartText x="258" y="344" width="50" height="24">
+              <Text align="START">
+                <Font family="SYNC_TO_DEVICE" size="17" weight="MEDIUM" color="#FF8A94A6">pm</Font>
+              </Text>
+            </PartText>
+          </Default>
+        </Condition>
+      </Group>
+    </Group>
+
+    <!-- ============ AOD: bold bright analog (dial + hands) + Mumbai ============ -->
+    <Group name="aod" x="0" y="0" width="450" height="450" alpha="0">
+      <Variant mode="AMBIENT" target="alpha" value="255"/>
+      <PartImage x="0" y="0" width="450" height="450">
+        <Image resource="dial_aod"/>
+      </PartImage>
+      <PartText x="0" y="292" width="450" height="18">
+        <Text align="CENTER">
+          <Font family="SYNC_TO_DEVICE" size="13" weight="SEMI_BOLD" color="#FF2EA8FF" letterSpacing="0.1">MUMBAI</Font>
+        </Text>
+      </PartText>
+      <DigitalClock x="0" y="0" width="450" height="450">
+        <Localization timeZone="Asia/Kolkata"/>
+        <TimeText format="hh:mm" hourFormat="SYNC_TO_DEVICE" align="CENTER" x="150" y="308" width="150" height="32">
+          <Font family="SYNC_TO_DEVICE" size="26" weight="MEDIUM" color="#FFFFFFFF"/>
+        </TimeText>
+      </DigitalClock>
+      <AnalogClock x="0" y="0" width="450" height="450">
+        <HourHand resource="hand_hour" x="211" y="97" width="28" height="150" pivotX="0.5" pivotY="0.8533"/>
+        <MinuteHand resource="hand_minute" x="214" y="37" width="22" height="210" pivotX="0.5" pivotY="0.8952"/>
+      </AnalogClock>
+      <PartDraw x="211" y="211" width="28" height="28">
+        <Ellipse x="0" y="0" width="28" height="28">
+          <Fill color="#FF2EA8FF"/>
+        </Ellipse>
+        <Ellipse x="9" y="9" width="10" height="10">
+          <Fill color="#FF000000"/>
+        </Ellipse>
+      </PartDraw>
+    </Group>
+  </Scene>
+</WatchFace>

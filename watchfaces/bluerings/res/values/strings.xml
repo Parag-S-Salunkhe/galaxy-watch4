@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="watch_face_name">Blue Rings</string>
+    <string name="hr_slot_label">Heart rate</string>
+</resources>
